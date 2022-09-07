@@ -1,0 +1,21 @@
+@mixin mq($key) {
+    @if $key == "phone" {
+        @media (max-width: 60rem) {
+            @content;
+        }
+    } @else if $key == "desktop" {
+        @media (min-width: 60rem) {
+            @content;
+        }
+    } @else {
+        @error "Invalid Option";
+    }
+}
+
+@mixin onfocus {
+    &:hover,
+    &:focus,
+    &.active {
+        @content;
+    }
+}

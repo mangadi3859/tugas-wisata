@@ -1,0 +1,13 @@
+{
+    "name": "wisata",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "css": "sass src/scss:public/css --watch --style compressed",
+        "js": "tsc --watch"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+}

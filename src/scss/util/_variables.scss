@@ -1,0 +1,137 @@
+@use "sass:color";
+@use "sass:math";
+
+// $primary-clr: hsl(167, 87%, 68%);
+$primary-clr: hsl(240, 51%, 67%);
+// $primary-clr: hsl(176, 68%, 74%);
+// $primary-clr: hsl(210, 96%, 46%);
+$primary-clr-200: hsl(343, 100%, 19%);
+$accent-light: #cfcfcf;
+$accent-dark: #272727;
+$accent-dark-400: #333;
+$black: #1f1f1f;
+$white: #cfcfcf;
+
+$primary: (
+    300: $primary-clr,
+    500:
+        color.adjust(
+            $color: $primary-clr,
+            $lightness: 20%,
+        ),
+    400:
+        color.adjust(
+            $color: $primary-clr,
+            $lightness: 10%,
+        ),
+    200:
+        color.adjust(
+            $color: $primary-clr,
+            $lightness: -10%,
+        ),
+    100:
+        color.adjust(
+            $color: $primary-clr,
+            $lightness: -20%,
+        ),
+);
+
+$accent-dark: (
+    500:
+        color.adjust(
+            $color: $accent-dark,
+            $lightness: 20%,
+        ),
+    450:
+        color.adjust(
+            $color: $accent-dark,
+            $lightness: 15%,
+        ),
+    350:
+        color.adjust(
+            $color: $accent-dark,
+            $lightness: 5%,
+        ),
+    400:
+        color.adjust(
+            $color: $accent-dark,
+            $lightness: 10%,
+        ),
+    300: $accent-dark,
+    250:
+        color.adjust(
+            $color: $accent-dark,
+            $lightness: -5%,
+        ),
+    200:
+        color.adjust(
+            $color: $accent-dark,
+            $lightness: -10%,
+        ),
+    150:
+        color.adjust(
+            $color: $accent-dark,
+            $lightness: -15%,
+        ),
+    100:
+        color.adjust(
+            $color: $accent-dark,
+            $lightness: -20%,
+        ),
+);
+
+$accent-light: (
+    500:
+        color.adjust(
+            $color: $accent-light,
+            $lightness: -20%,
+        ),
+    450:
+        color.adjust(
+            $color: $accent-light,
+            $lightness: -15%,
+        ),
+    400:
+        color.adjust(
+            $color: $accent-light,
+            $lightness: -10%,
+        ),
+    350:
+        color.adjust(
+            $color: $accent-light,
+            $lightness: -5%,
+        ),
+    300: $accent-light,
+    250:
+        color.adjust(
+            $color: $accent-light,
+            $lightness: 5%,
+        ),
+    200:
+        color.adjust(
+            $color: $accent-light,
+            $lightness: 10%,
+        ),
+    150:
+        color.adjust(
+            $color: $accent-light,
+            $lightness: 15%,
+        ),
+    100:
+        color.adjust(
+            $color: $accent-light,
+            $lightness: 20%,
+        ),
+);
+
+$gradient-clr: (
+    start:
+        map-get(
+            $map: $primary,
+            $key: 300,
+        ),
+    middle: #86a8e7,
+    // end: hsl(184, 91%, 45%),
+    end: #90eae4,
+    // start: #021b79,
+);

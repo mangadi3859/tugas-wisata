@@ -1,0 +1,232 @@
+@use "util";
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+* {
+    font-family: Poppins, Arial, "Helvetica Neue";
+}
+
+[hidden] {
+    display: none !important;
+}
+
+:root {
+    @each $shade, $value in util.$primary {
+        --primary-#{$shade}: #{$value};
+    }
+
+    @each $shade, $value in util.$accent-dark {
+        --dark-#{$shade}: #{$value};
+        --text-#{$shade}: #{$value};
+    }
+
+    @each $shade, $value in util.$accent-light {
+        --light-#{$shade}: #{$value};
+        --accent-#{$shade}: #{$value};
+    }
+
+    // --header-height: 3.75rem;
+    --max-width: 60rem;
+}
+
+body[data-dark-mode] {
+    @each $shade, $value in util.$accent-dark {
+        --accent-#{$shade}: #{$value};
+        --text-#{$shade}: #{map-get(util.$accent-light, $shade)};
+    }
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    color: white;
+    scroll-behavior: smooth;
+    scroll-padding-top: 4.25rem;
+
+    *,
+    *::before,
+    *::after {
+        transition: all 0.1s ease;
+    }
+}
+
+p,
+h1,
+h2,
+h3,
+article {
+    margin: 0;
+    padding: 0;
+}
+
+.img-fixed {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+}
+
+#main {
+    color: var(--text-200);
+    margin-top: var(--header-height);
+    margin-inline: auto;
+    // color: var(--text-300);
+    // background-color: var(--accent-300);
+    section {
+        overflow: hidden;
+        overflow: hidden;
+    }
+
+    & > section > .container {
+        width: min(60rem, 100vw);
+        margin-inline: auto;
+        min-height: 13rem;
+        overflow: hidden;
+        padding-block: 2rem;
+
+        & > .heading {
+            position: relative;
+            width: max-content;
+            margin-bottom: 3rem;
+            font-size: 2rem;
+            color: white;
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: calc(100% + 1rem);
+                top: 50%;
+                height: 5px;
+                border-radius: 20rem;
+                opacity: 0.5;
+                width: 15rem;
+                z-index: 2;
+                translate: 0 -50%;
+                background: util.pGradient();
+            }
+        }
+    }
+}
+
+#footer {
+    background-color: var(--dark-200);
+    height: auto;
+    width: 100%;
+
+    .container {
+        max-width: var(--max-width);
+        min-height: 10rem;
+        margin-inline: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100% !important;
+        padding-block: 1.25rem;
+    }
+}
+
+body {
+    position: relative;
+    background-color: var(--accent-200);
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+svg {
+    // aspect-ratio: 1;
+    color: white;
+    fill: currentColor;
+    height: 100%;
+    width: auto;
+}
+
+button,
+.btn {
+    appearance: none;
+    background: none;
+    border: none;
+    font-weight: 700;
+    outline: none;
+    cursor: pointer;
+    user-select: none;
+}
+
+.btn {
+    border-radius: 0.25em;
+    cursor: pointer;
+    box-shadow: 0 20px 2em rgba(black, 0.6);
+    font-weight: 600;
+    padding: 0.35em 1.25em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    // border: 2px solid white
+    background: util.pGradient();
+    transition: 0.1s ease;
+
+    @include util.onfocus {
+        transition: 0.05s ease;
+        transform: scale(1.1);
+    }
+}
+
+a,
+.link {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.fa-left {
+    margin-right: 1rem;
+}
+
+.fa-right {
+    margin-left: 1rem;
+}
+
+.strong,
+strong {
+    color: var(--primary-300);
+}
+
+[data-slide] {
+    opacity: 0;
+    transition-duration: 1s !important;
+    transition-timing-function: ease;
+}
+
+[data-slide="right"] {
+    translate: -7rem 0;
+}
+
+[data-slide="left"] {
+    translate: 7rem 0;
+}
+
+[data-slide="top"] {
+    translate: 0 7rem;
+}
+
+[data-slide="bottom"] {
+    translate: 0 -7rem;
+}
+
+[data-slide].show {
+    translate: 0 0;
+    opacity: 1;
+}

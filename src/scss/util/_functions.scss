@@ -1,0 +1,5 @@
+@use "./variables" as vars;
+
+@function pGradient($deg: 45deg) {
+    @return linear-gradient(#{$deg}, map-get(vars.$gradient-clr, start), map-get(vars.$gradient-clr, middle), map-get(vars.$gradient-clr, end));
+}
