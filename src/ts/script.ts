@@ -8,6 +8,7 @@ const heroBtn = <HTMLAnchorElement>document.querySelector("#hero a");
 const sideMenu = document.querySelectorAll("#sidebar .menu a");
 const sideBtn = document.querySelectorAll("[data-side-btn]");
 const sidebar = <HTMLDivElement>document.querySelector("#sidebar");
+const contactForm = <HTMLFormElement>document.querySelector("#contact-form");
 
 const heroObserver = new IntersectionObserver(
     (e) => {
@@ -73,3 +74,12 @@ sideBtn.forEach((e) => {
 });
 
 sideMenu.forEach((e) => e.addEventListener("click", () => sidebar.classList.remove("show")));
+
+contactForm.addEventListener("submit", (e) => {
+    let target = <HTMLFormElement>e.target;
+    let name = <HTMLInputElement>target.querySelector("#f-name");
+    let number = <HTMLInputElement>target.querySelector("#f-number");
+    e.preventDefault();
+
+    window.open(`https://wa.me/6281337614453?text=Halo%20Nama%20Saya%20${encodeURIComponent(`*${name.value}* *_[${number.value}]_*`)}`);
+});

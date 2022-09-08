@@ -107,6 +107,10 @@ article {
             font-size: 2rem;
             color: white;
 
+            @include util.mq(phone) {
+                font-size: 1.75rem;
+            }
+
             &::after {
                 content: "";
                 position: absolute;

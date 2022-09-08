@@ -55,10 +55,12 @@
         </header>
         <main id="main">
             <section id="about">
-                <div class="container">
+                <div class="container" data-slide="top">
                     <h2 class="heading" data-slide="right">Tentang</h2>
                     <div class="container-deep" data-slide="top">
-                        <p class="p1">Pura Tanah Lot adalah salah satu Pura yang sangat disucikan di Bali, Indonesia. Di sini ada dua pura yang terletak di atas batu besar. Satu terletak di atas bongkahan batu dan satunya terletak di atas tebing mirip dengan Pura Uluwatu. Pura Tanah Lot ini merupakan bagian dari pura Dang Kahyangan.</p>
+                        <p data-slide="bottom" class="p1">
+                            Pura Tanah Lot adalah salah satu Pura yang sangat disucikan di Bali, Indonesia. Di sini ada dua pura yang terletak di atas batu besar. Satu terletak di atas bongkahan batu dan satunya terletak di atas tebing mirip dengan Pura Uluwatu. Pura Tanah Lot ini merupakan bagian dari pura Dang Kahyangan.
+                        </p>
                         <img data-slide="right" src="public/assets/photo1.jpg" class="img-left" alt="tanahlot" />
                         <p style="margin-bottom: 0.5rem" data-slide="left">Mengenai jam buka di Tanah Lot yang mana hanya 12 jam yaitu mulai dari jam <strong>07.00 – 19.00 WITA</strong>. Meskipun hanya buka selama 12 jam, namun anda dapat menikmati sunset dan wisata lainnya dengan fasilitas yang memadai.</p>
                         <p data-slide="right">
@@ -145,7 +147,7 @@
                             <label for="f-name">Nama</label>
                             <input type="text" name="name" id="f-name" required />
                             <label for="f-nomer">No HP</label>
-                            <input type="text" name="nomer" id="f-nomer" required pattern="\d{4,}" />
+                            <input type="text" name="nomer" id="f-number" required pattern="^\d{9,15}$" />
                             <button type="submit" class="btn">Kirim</button>
                         </form>
                     </div>

@@ -9,6 +9,7 @@ const heroBtn = document.querySelector("#hero a");
 const sideMenu = document.querySelectorAll("#sidebar .menu a");
 const sideBtn = document.querySelectorAll("[data-side-btn]");
 const sidebar = document.querySelector("#sidebar");
+const contactForm = document.querySelector("#contact-form");
 const heroObserver = new IntersectionObserver((e) => {
     e.forEach((el) => {
         if (!el.isIntersecting) {
@@ -62,3 +63,10 @@ sideBtn.forEach((e) => {
     });
 });
 sideMenu.forEach((e) => e.addEventListener("click", () => sidebar.classList.remove("show")));
+contactForm.addEventListener("submit", (e) => {
+    let target = e.target;
+    let name = target.querySelector("#f-name");
+    let number = target.querySelector("#f-number");
+    e.preventDefault();
+    window.open(`https://wa.me/6281337614453?text=Halo%20Nama%20Saya%20${encodeURIComponent(`*${name.value}* *_[${number.value}]_*`)}`);
+});
