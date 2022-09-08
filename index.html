@@ -17,9 +17,27 @@
         <script src="./public/js/script.js" defer></script>
     </head>
     <body>
+        <aside id="sidebar">
+            <div class="header">
+                <span class="brand">WisataBali</span>
+                <button class="btn-cancel"><span class="fa-block fa fa-xmark" data-side-btn></span></button>
+            </div>
+
+            <div class="menu">
+                <a href="#header" data-to="header">Top</a>
+                <a href="#about" data-to="about">About</a>
+                <a href="#gallery" data-to="gallery">Gallery</a>
+                <a href="#location" data-to="location">Location</a>
+                <a href="#contact" data-to="contact">Contact</a>
+            </div>
+        </aside>
+
         <nav id="navbar" data-nav>
             <div class="container">
-                <span>WisataBali</span>
+                <div class="menu menu-phone" data-side-btn><span class="fas fa-bars fa-block"></span></div>
+
+                <span class="brand">WisataBali</span>
+
                 <div class="menu">
                     <a href="#header" class="active" data-to="header">Top</a>
                     <a href="#about" data-to="about">About</a>
@@ -43,9 +61,13 @@
                         <p class="p1">Pura Tanah Lot adalah salah satu Pura yang sangat disucikan di Bali, Indonesia. Di sini ada dua pura yang terletak di atas batu besar. Satu terletak di atas bongkahan batu dan satunya terletak di atas tebing mirip dengan Pura Uluwatu. Pura Tanah Lot ini merupakan bagian dari pura Dang Kahyangan.</p>
                         <img data-slide="right" src="public/assets/photo1.jpg" class="img-left" alt="tanahlot" />
                         <p style="margin-bottom: 0.5rem" data-slide="left">Mengenai jam buka di Tanah Lot yang mana hanya 12 jam yaitu mulai dari jam <strong>07.00 – 19.00 WITA</strong>. Meskipun hanya buka selama 12 jam, namun anda dapat menikmati sunset dan wisata lainnya dengan fasilitas yang memadai.</p>
-                        <p data-slide="top">
+                        <p data-slide="right">
                             Sedangkan mengenai harga tiket masuk ke Tanah Lot yaitu berkisar antara <strong>Rp 10.000 – Rp 20.000</strong>. Dimana tiket dengan harga <strong>Rp 10.000</strong>, - ditarifkan untuk <b><u>Anak-anak</u></b> dan <strong>Rp 20.000</strong>,- khusus untuk orang <b><u>Dewasa</u></b
-                            >. Untuk tiket parkirnya bagi roda dua dikenakan <strong>Rp 2.000</strong>,- roda 4 dikenakan <strong>Rp 4.000</strong>,- dan untuk roda 6 sekitar <strong>Rp 6.000</strong>,-. Tersedia juga tiket untuk acara Kecak Api Tanah Lot yang ditarifkan sekitar <strong>Rp 50.000</strong>,-. Namun perlu diingat bahwa daftar tiket
+                            >.
+                        </p>
+                        <br />
+                        <p data-slide="top">
+                            Untuk tiket parkirnya bagi roda dua dikenakan <strong>Rp 2.000</strong>,- roda 4 dikenakan <strong>Rp 4.000</strong>,- dan untuk roda 6 sekitar <strong>Rp 6.000</strong>,-. Tersedia juga tiket untuk acara Kecak Api Tanah Lot yang ditarifkan sekitar <strong>Rp 50.000</strong>,-. Namun perlu diingat bahwa daftar tiket
                             wisata ini sewaktu-waktu dapat berubah.
                         </p>
                     </div>
@@ -57,12 +79,12 @@
                     <h2 class="heading" data-slide="right">Galeri Foto</h2>
                     <div class="container-deep">
                         <div class="galleries">
-                            <a style="--t: 0" target="_blank" data-slide="top" href="./public/assets/photo1.jpg"><img src="./public/assets/photo1.jpg" alt="photo1" /></a>
-                            <a style="--t: 1" target="_blank" data-slide="top" href="./public/assets/photo2.jpg"><img src="./public/assets/photo2.jpg" alt="photo2" /></a>
-                            <a style="--t: 2" target="_blank" data-slide="top" href="./public/assets/photo3.jpg"><img src="./public/assets/photo3.jpg" alt="photo3" /></a>
-                            <a style="--t: 3" target="_blank" data-slide="top" href="./public/assets/photo4.jpg"><img src="./public/assets/photo4.jpg" alt="photo4" /></a>
-                            <a style="--t: 4" target="_blank" data-slide="top" href="./public/assets/photo5.jpg"><img src="./public/assets/photo5.jpg" alt="photo5" /></a>
-                            <a style="--t: 5" target="_blank" data-slide="top" href="./public/assets/photo6.jpg"><img src="./public/assets/photo6.jpg" alt="photo6" /></a>
+                            <a target="_blank" data-slide="top" href="./public/assets/photo1.jpg"><img src="./public/assets/photo1.jpg" alt="photo1" /></a>
+                            <a target="_blank" data-slide="top" href="./public/assets/photo2.jpg"><img src="./public/assets/photo2.jpg" alt="photo2" /></a>
+                            <a target="_blank" data-slide="top" href="./public/assets/photo3.jpg"><img src="./public/assets/photo3.jpg" alt="photo3" /></a>
+                            <a target="_blank" data-slide="top" href="./public/assets/photo4.jpg"><img src="./public/assets/photo4.jpg" alt="photo4" /></a>
+                            <a target="_blank" data-slide="top" href="./public/assets/photo5.jpg"><img src="./public/assets/photo5.jpg" alt="photo5" /></a>
+                            <a target="_blank" data-slide="top" href="./public/assets/photo6.jpg"><img src="./public/assets/photo6.jpg" alt="photo6" /></a>
                         </div>
                     </div>
                 </div>

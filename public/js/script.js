@@ -6,6 +6,9 @@ const sections = Array.from(document.querySelectorAll("#header, #about, #gallery
 const navItems = Array.from(document.querySelectorAll("#navbar .menu a"));
 const heroTitle = document.querySelector("#hero .title");
 const heroBtn = document.querySelector("#hero a");
+const sideMenu = document.querySelectorAll("#sidebar .menu a");
+const sideBtn = document.querySelectorAll("[data-side-btn]");
+const sidebar = document.querySelector("#sidebar");
 const heroObserver = new IntersectionObserver((e) => {
     e.forEach((el) => {
         if (!el.isIntersecting) {
@@ -44,7 +47,18 @@ document.addEventListener("scroll", (event) => {
 });
 function heroParallax() {
     let y = window.scrollY;
+    let rect = hero.getBoundingClientRect();
+    if (y > rect.height)
+        return;
     heroBtn.style.top = `${y * 0.5}px`;
     heroTitle.style.top = `${y * 0.6}px`;
-    heroTitle.style.fontSize = `${48 + y * 0.05}px`;
+    heroTitle.style.fontSize = `calc(var(--font-size) + ${3 * (y / rect.height)}vw)`;
 }
+sideBtn.forEach((e) => {
+    e.addEventListener("click", (e) => {
+        if (sidebar.classList.contains("show"))
+            return sidebar.classList.remove("show");
+        sidebar.classList.add("show");
+    });
+});
+sideMenu.forEach((e) => e.addEventListener("click", () => sidebar.classList.remove("show")));

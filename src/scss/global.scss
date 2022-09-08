@@ -84,15 +84,21 @@ article {
     // background-color: var(--accent-300);
     section {
         overflow: hidden;
-        overflow: hidden;
+        padding: 1em 0.5em;
+        width: 100vw;
     }
 
     & > section > .container {
-        width: min(60rem, 100vw);
+        width: min(60rem, 95%) !important;
         margin-inline: auto;
         min-height: 13rem;
         overflow: hidden;
         padding-block: 2rem;
+        overflow: hidden;
+
+        // .container-deep {
+        //     // width: 100%;
+        // }
 
         & > .heading {
             position: relative;
@@ -189,6 +195,21 @@ a,
     color: white;
     text-decoration: none;
     cursor: pointer;
+}
+
+.fa-block {
+    // position: relative;
+    display: grid;
+    place-items: center;
+
+    &::before {
+        // position: absolute;
+        text-align: center;
+        height: 100%;
+        width: 100%;
+        font-size: inherit;
+        color: inherit;
+    }
 }
 
 .fa-left {

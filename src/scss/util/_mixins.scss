@@ -1,10 +1,10 @@
 @mixin mq($key) {
     @if $key == "phone" {
-        @media (max-width: 60rem) {
+        @media (max-width: 50rem) {
             @content;
         }
     } @else if $key == "desktop" {
-        @media (min-width: 60rem) {
+        @media (min-width: 50rem) {
             @content;
         }
     } @else {
