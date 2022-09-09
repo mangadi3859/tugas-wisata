@@ -107,6 +107,10 @@ article {
             font-size: 2rem;
             color: white;
 
+            strong {
+                color: white;
+            }
+
             @include util.mq(phone) {
                 font-size: 1.75rem;
             }
@@ -144,6 +148,11 @@ article {
         height: 100% !important;
         padding-block: 1.25rem;
     }
+
+    tr:not(.contact) td a {
+        opacity: 0.75;
+        color: var(--light-500);
+    }
 }
 
 body {
@@ -156,12 +165,17 @@ body {
     align-items: center;
 }
 
-svg {
+svg.svg {
     // aspect-ratio: 1;
     color: white;
     fill: currentColor;
     height: 100%;
     width: auto;
+
+    path {
+        color: inherit;
+        fill: currentColor;
+    }
 }
 
 button,
