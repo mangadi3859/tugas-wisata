@@ -142,16 +142,30 @@ article {
         min-height: 10rem;
         margin-inline: auto;
         display: flex;
-        flex-direction: column;
+        // flex-direction: column;
         justify-content: center;
-        align-items: center;
+        gap: 2rem;
+        align-items: start;
         height: 100% !important;
         padding-block: 1.25rem;
     }
 
-    tr:not(.contact) td a {
+    tr:not(.contact) td {
         opacity: 0.75;
         color: var(--light-500);
+    }
+
+    tr.contact td {
+        text-align: center;
+        color: var(--light-200);
+    }
+
+    .line {
+        // --length: 100%;
+        --width: 4px;
+        background-color: var(--light-200);
+        height: 100%;
+        width: var(--width);
     }
 }
 
@@ -250,22 +264,22 @@ strong {
 }
 
 [data-slide="right"] {
-    translate: -7rem 0;
+    transform: translateX(-7rem);
 }
 
 [data-slide="left"] {
-    translate: 7rem 0;
+    transform: translateX(7rem);
 }
 
 [data-slide="top"] {
-    translate: 0 7rem;
+    transform: translateY(7rem);
 }
 
 [data-slide="bottom"] {
-    translate: 0 -7rem;
+    transform: translateY(-7rem);
 }
 
 [data-slide].show {
-    translate: 0 0;
+    transform: translateX(0) translateY(0);
     opacity: 1;
 }
