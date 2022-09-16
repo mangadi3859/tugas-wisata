@@ -148,6 +148,13 @@ article {
         align-items: start;
         height: 100% !important;
         padding-block: 1.25rem;
+
+        @include util.mq(phone) {
+            flex-direction: column;
+            gap: 0.5rem;
+            align-items: center;
+            font-size: 0.8rem;
+        }
     }
 
     tr:not(.contact) td {
@@ -208,6 +215,7 @@ button,
     cursor: pointer;
     box-shadow: 0 20px 2em rgba(black, 0.6);
     font-weight: 600;
+    user-select: none;
     padding: 0.35em 1.25em;
     text-transform: uppercase;
     text-decoration: none;
