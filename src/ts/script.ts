@@ -28,6 +28,7 @@ heroObserver.observe(<NonNullable<any>>hero);
 const loadingObserver = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
         if (!e.isIntersecting) return;
+        if ("slideLength" in (<HTMLElement>e.target).dataset) (<HTMLElement>e.target).style.setProperty("--length", <any>(<HTMLElement>e.target).dataset.slideLength);
         e.target.classList.add("show");
         loadingObserver.unobserve(e.target);
     });

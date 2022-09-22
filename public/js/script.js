@@ -24,6 +24,8 @@ const loadingObserver = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
         if (!e.isIntersecting)
             return;
+        if ("slideLength" in e.target.dataset)
+            e.target.style.setProperty("--length", e.target.dataset.slideLength);
         e.target.classList.add("show");
         loadingObserver.unobserve(e.target);
     });
