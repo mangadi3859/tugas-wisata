@@ -3,13 +3,14 @@ const hero = document.querySelector("#hero");
 const animates = document.querySelectorAll("[data-slide]");
 const sections = Array.from(document.querySelectorAll<HTMLDivElement>("#header, #about, #gallery, #location, #contact")).reverse();
 const navItems = Array.from(document.querySelectorAll<HTMLAnchorElement>("#navbar .menu a"));
+const heroBg = <HTMLElement>document.querySelector("#hero .bg-hero");
 const heroTitle = <HTMLElement>document.querySelector("#hero .title");
 const heroBtn = <HTMLAnchorElement>document.querySelector("#hero a");
 const sideMenu = document.querySelectorAll("#sidebar .menu a");
 const sideBtn = document.querySelectorAll("[data-side-btn]");
 const sidebar = <HTMLDivElement>document.querySelector("#sidebar");
 const contactForm = <HTMLFormElement>document.querySelector("#contact-form");
-const carousel = document.querySelector("[data-carousel]");
+const carousel = document.querySelectorAll("[data-carousel]");
 
 const heroObserver = new IntersectionObserver(
     (e) => {
@@ -65,6 +66,8 @@ function heroParallax(): void {
 
     heroBtn.style.top = `${y * 0.5}px`;
     heroTitle.style.top = `${y * 0.6}px`;
+    // heroBg.style.top = `${y * 0.4}px`;
+    heroBg.style.transform = `translateY(${y * 0.75}px)`;
     heroTitle.style.fontSize = `calc(var(--font-size) + ${3 * (y / rect.height)}vw)`;
 }
 
@@ -86,4 +89,6 @@ contactForm.addEventListener("submit", (e) => {
     window.open(`https://wa.me/6281337614453?text=Halo%20Nama%20Saya%20${encodeURIComponent(`*${name.value}* *_[${number.value}]_*`)}`);
 });
 
-new Carousel(<HTMLDivElement>carousel);
+carousel.forEach((e) => {
+    new Carousel(<HTMLElement>e);
+});

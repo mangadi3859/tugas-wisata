@@ -28,6 +28,11 @@ class Carousel {
         }, 5000);
     }
     setActive(index) {
+        // if (index == this.curIndex) return;
+        // if (index > this.curIndex) {
+        //     this.items[index].style.animation = "co-sleft 1s linear";
+        //     this.items[this.curIndex].style.animation = "co-sright-out 1s linear";
+        // }
         this.curIndex = index;
         this.items.forEach((e) => e.classList.remove("show"));
         this.items[index].classList.add("show");
