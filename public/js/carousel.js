@@ -5,6 +5,8 @@ class Carousel {
     items;
     dots = [];
     curIndex = 0;
+    queue = 0;
+    DELAY = 5000;
     constructor(element) {
         this.carouselContainer = element.querySelector("[data-carousel-container]");
         this.carouselDots = element.querySelector("[data-carousel-dots]");
@@ -23,11 +25,16 @@ class Carousel {
                 this.setActive(i);
             });
         });
-        setInterval(() => {
+    }
+    setQueue() {
+        clearTimeout(this.queue);
+        this.queue = setTimeout(() => {
             this.setActive((this.curIndex + 1) % this.dots.length);
-        }, 5000);
+            this.setQueue();
+        }, this.DELAY);
     }
     setActive(index) {
+        this.setQueue();
         // if (index == this.curIndex) return;
         // if (index > this.curIndex) {
         //     this.items[index].style.animation = "co-sleft 1s linear";
