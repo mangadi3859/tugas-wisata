@@ -37,7 +37,7 @@ class Carousel {
         clearTimeout(this.queue);
         this.queue = setTimeout(() => {
             this.setActive((this.curIndex + 1) % this.dots.length);
-            this.setQueue();
+            //this.setQueue();
         }, this.DELAY);
     }
 
